@@ -4,9 +4,14 @@ import CurrentWeather from './components/current-weather/CurrentWeather';
 import Forecast from './components/forecast/Forecast';
 import { WEATHER_API_URL } from './api';
 import { WEATHER_API_KEY } from './api';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+  useEffect(() => {
+    document.title = "Weather Dojo";
+  }, []);
+
   const [currentWeather, setCurrentWeather] = useState(null)
   const [forecast, setForecast] = useState(null)
 
